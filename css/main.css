@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    /* border: 1px solid limegreen; */
+  }
+
+  body {
+    /* centering content */
+    height: 100vh;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #board {
+    display: grid;
+    /* 3 cols 3 rows & 20% of the viewport width and height */
+    grid-template-columns: repeat(3, 20vmin);
+    grid-template-rows: repeat(3, 20vmin);
+  }
+
+  /* cells */
+  #board > div {
+    background-color: beige;
+    border: 1px solid black;
+    /* margin: 2vmin; */
+  }
+
+  /* removing outer borders of the grid */
+  div > #cell0, div > #cell1, div > #cell2 {
+    border-top: none;
+  }
+
+  div > #cell0, div > #cell3, div > #cell6 {
+    border-left: none;
+  }
+
+  div > #cell2, div > #cell5, div > #cell8 {
+    border-right: none;
+  }
+
+  div > #cell6, div > #cell7, div > #cell8 {
+    border-bottom: none;
+  }
+
+  
