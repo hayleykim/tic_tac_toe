@@ -77,7 +77,7 @@ function messageRender() {
 
 function handleMove (evt) {
 
-    //getting inddex of the cell by replacing cell id name from cell + number to "" + number and get the number (from 0 - 8) by parseInt
+    //getting inddex of the cell by replacing cell id name from cell + number to "" + number and get the number (from 0 - 8) by parseInt (change number that is in string to number)
     const idx = parseInt(evt.target.id.replace('cell', ''));
 
     //if cell isn't clicked (idx is not a number) OR cell is taken OR there is a winner
@@ -94,12 +94,17 @@ function handleMove (evt) {
 }
 
 function getWinner() {
+
+    //Winner
     for(let winArr of WINNING_COMBINATIONS) {
+        // if board[1] board[1] board[1] -> 3 so 1 wins. if board[-1] board[-1] board[-1] => |-3| => 3 from WINNING_COMBINATIONS array so -1 wins.
         if (Math.abs(board[winArr[0]] + board[winArr[1]] + board[winArr[2]]) === 3) return turn;
     }
 
-    //Tie
+    //No winner yet.
     if (board.includes(null)) return null;
+
+    //Tie as board is full (without null and there is no winning combo)
     return 'T';
 }
 

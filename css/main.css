@@ -23,7 +23,7 @@ grid-template-rows: repeat(3, 20vmin);
 
 /* cells */
 #board > div {
-background-color: beige;
+/* background-color: beige; */
 border: 1px solid black;
 /* margin: 2vmin; */
 }
